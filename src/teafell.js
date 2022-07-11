@@ -1,5 +1,5 @@
 const { Client, Intents, Collection, Permissions, Discord, Attachment, Message, MessageEmbed, MessageManager } = require("discord.js");
-const { token } = require("./config.json");
+const { token } = require("./config.txt");
 const command = require('./command');
 const firstMessage = require('./first-message');
 const privateMessage = require('./private-message');
