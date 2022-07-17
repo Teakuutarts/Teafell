@@ -1,4 +1,4 @@
 # Teakuu
  Teafell JS API -
- A Discord Bot
+ Our Discord Bot
 https://www.teakuu.tk/invite
