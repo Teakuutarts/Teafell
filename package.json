@@ -1,12 +1,13 @@
 {
   "name": "teafell",
-  "version": "4.8.1",
+  "version": "5.2.7",
   "description": "A Teakuu Discord Bot",
   "main": "teafell.js",
   "scripts": {
     "test": "echo Test :p",
     "start": "node ./src/teafell.js",
     "dev": "nodemon ./src/teafell.js",
+    "teafell": "nodemon ./src/teafell.js",
     "old": "node ./src/bot.js",
     "index": "nodemon ./src/index.js"
   },

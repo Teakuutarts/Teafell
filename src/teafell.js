@@ -1,8 +1,26 @@
+//
+//                       Teafell JS API - For Teakuu Discord Bot
+//
+// hi
+// hey, please update any node modules needed, ty!
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//Sorry for the long message board!!! I just like to have this lol
 const { Client, Intents, Collection, Permissions, Discord, Attachment, Message, MessageEmbed, MessageManager } = require("discord.js");
 const { token } = require("./config.json");
-const command = require('./command');
-const firstMessage = require('./first-message');
-const privateMessage = require('./private-message');
+const command = require('./command.js');
+const command = require('./tt!/initial_handler.js')
+const firstMessage = require('./first-message.js');
+const privateMessage = require('./private-message.js');
+// remove this an the cmds in here for it and move it to ./commands/cooljsfile.js
 const fs = require('fs');
 const mongoose = require('mongoose');
 const client = new Client({
@@ -12,7 +30,7 @@ const client = new Client({
 client.on('ready', () => {
 	console.log('Teafell - PID Set');
 	client.user.setUsername("Teakuu");
-	client.user.setActivity("on mc.teakuu.tk", {
+	client.user.setActivity("Uwa, So Temperate!", {
 		type:"PLAYING"
 //		url: "https://www.youtube.com/watch?v=0bZ0hkiIKt0"
 	});
@@ -85,12 +103,6 @@ client.on('messageCreate', msg => {
 		msg.channel.send({ embeds: [RulesEmbed] })
 	}
 });
-command(client, [''], (message) => {
-    message.channel.send('tt what now? Try tt!help silly.')
-});
-command(client, ['ping', 'testcmd'], (message) => {
-    message.channel.send('Pong!')
-});
 
 command(client, 'serverlist', (message) => {
 	if (message.member.permissions.has(Permissions.MANAGE_CHANNELS)) {
@@ -100,80 +112,45 @@ command(client, 'serverlist', (message) => {
 	}
 });
 
+command(client, ['guild', 'HOWMANYPEOPLES', 'membercount', 'members'], (message) => {
+client.on('guildCreate', guild => {
+	console.log(guild.members.cache)
+	client.on("error", () => { client.login(token) });
+	// Keep in mind: This will quite literally spam your terminal. 
+	// SHUT THE FUCK UP I KNOW -k (wait it's gonna say I edited that)
+	})
+});
+
 command(client, ['bulkclear', 'massclear', 'mclear', 'bclear'], (message) => {
 	if (message.member.permissions.has(Permissions.MANAGE_CHANNELS)) {
-    	message.channel.messages.fetch().then((results) => {
-        message.channel.bulkDelete(results).catch(client.login(token));	//.catch(console.error)
+		message.channel.messages.fetch().then((results) => {
+		message.channel.bulkDelete(results).catch(client.login(token));	//.catch(console.error)
 		client.on("error", () => { client.login(token) });
-      })
-    }
-});
-client.on('messageCreate', msg => {
-	if(msg.content == 'tt!help'){
-		const { MessageEmbed } = require('discord.js');
-		const TTHelpEmbed = new MessageEmbed()
-		.setColor('#EEABAB')
-		.setTitle('**♡°•☆Help Menu☆•°♡**')
-		.setAuthor('Prefix: tt! - Bot In Development \n Reaction pages may get added!')
-		.setDescription("• mypfp - Displays your profile picture \n • ping / testcmd - PingPong! \n • massclear - Clears mass chunk of channel text \n • serverlist - Displays servers the bot is in  \n • ttm! - This is for the music part of the bot \n • help `<page>` - Help pages")
-		.setFooter('Page 1/2');
-		msg.channel.send({ embeds: [TTHelpEmbed] });
-	}
-});
-client.on('messageCreate', msg => {
-	if(msg.content == 'tt!help 1'){
-		const { MessageEmbed } = require('discord.js');
-		const TTHelpEmbed = new MessageEmbed()
-		.setColor('#EEABAB')
-		.setTitle('**♡°•☆Help Menu☆•°♡**')
-		.setAuthor('Prefix: tt! - Bot In Development \n Reaction pages may get added!')
-		.setDescription("• mypfp - Displays your profile picture \n • ping / testcmd - PingPong! \n • massclear - Clears mass chunk of channel text \n • serverlist - Displays servers the bot is in  \n • ttm! - This is for the music part of the bot \n • help `<page>` - Help pages")
-		.setFooter('Page 1/2');
-		msg.channel.send({ embeds: [TTHelpEmbed] });
+     	})
 	}
 });
 
-
-client.on('messageCreate', msg => {
-	if(msg.content == 'tt!help 2'){
-		const { MessageEmbed } = require('discord.js');
-		const TTHelpEmbed2 = new MessageEmbed()
-		.setColor('#EEABAB')
-		.setTitle('**♡°•☆Help Menu☆•°♡**')
-		.setDescription("Last Page!")
-		.setFooter('Page 2/2');
-		msg.channel.send({ embeds: [TTHelpEmbed2] });
-	}
-});
 client.once('ready', () => {
 	console.log('Teafell - Loaded Assets & Bot Configuration');
 	console.log('Loading...');
 	console.log('Teafell - ✶ A-K1 - Online ✶');
 });
-  command(client, 'serverinfo', (message) => {
-    const { guild } = message
 
-    const { name, region, memberCount, owner, afkTimeout } = guild
-    const icon = guild.iconURL()
-
-    const embed = new MessageEmbed()
-      .setTitle(`Server info for "${name}"`)
-      .setThumbnail(icon)
-      .addFields(
-        {
-          name: 'Region',
-          value: region,
-        },
-        {
-          name: 'Members',
-          value: memberCount,
-        },
-        {
-          name: 'AFK Timeout',
+command(client, 'serverinfo', (message) => {
+const { guild } = message
+const { name, region, memberCount, owner, afkTimeout } = guild
+const icon = guild.iconURL()
+const embed = new MessageEmbed()
+     .setTitle(`Server info for "${name}"`)
+     .setThumbnail(icon)
+     .addFields(
+		{ name: 'Region',
+          value: region, },
+     	{ name: 'Members',
+          value: memberCount, },
+     	{ name: 'AFK Timeout',
           value: afkTimeout / 60,
-        }
-      )
-
-    message.channel.send(embed)
+     })
+message.channel.send(embed)
 });
 client.login(token)
