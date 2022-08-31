@@ -18,6 +18,7 @@ const { Client, Intents, Collection, Permissions, Discord, Attachment, Message, 
 const { token } = require("./config.json");
 const command = require('./command.js');
 const command = require('./tt!/initial_handler.js')
+// please :)
 const firstMessage = require('./first-message.js');
 const privateMessage = require('./private-message.js');
 // remove this an the cmds in here for it and move it to ./commands/cooljsfile.js
