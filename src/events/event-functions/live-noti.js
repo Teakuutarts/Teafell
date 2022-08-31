@@ -1,5 +1,4 @@
 const guildModel = require('../../models/guildSchema');
-
 module.exports = client => {
 	client.on('presenceUpdate', async (oldPresence, newPresence) => {
 		const Guild = await newPresence.guild.fetch().catch(e => {

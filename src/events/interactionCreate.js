@@ -5,11 +5,8 @@ module.exports = {
 	name: 'interactionCreate',
 	async execute(interaction) {
 		if (!interaction.isCommand()) return;
-
 		const command = interaction.client.commands.get(interaction.commandName);
-
 		if (!command) return;
-
 		let guildProfile = await guild.findOne({ guildId: interaction.guildId });
 		if (!guildProfile) {
 			guildProfile = await new guild({
@@ -18,11 +15,9 @@ module.exports = {
 			});
 			await guildProfile.save().catch(err => console.log(err));
 		}
-
 		if (interaction.commandName != 'purge') {
 			await interaction.deferReply();
 		}
-
 		try {
 			await command.execute(interaction);
 		}
