@@ -4,9 +4,9 @@ require('./config.json').config();
 const fs = require('fs');
 const { clientId } = require('./config.json');
 const commands = [];
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+const commandFiles = fs.readdirSync('./commands/tt!').filter(file => file.endsWith('.js'));
 for (const file of commandFiles) {
-	const command = require(`./commands/${file}`);
+	const command = require(`./commands/tt!/${file}`);
 	commands.push(command.data.toJSON());
 }
 const rest = new REST({ version: '9' }).setToken(process.env.TOKEN);
@@ -21,5 +21,14 @@ const rest = new REST({ version: '9' }).setToken(process.env.TOKEN);
 	catch (error) {
 		console.error(error);}
 })();
-console.log('Loaded Commands');
-// uwaa!!!
+console.log('TT! Support Enabled');
+
+// Oh, Hi!
+
+command(client, ['ping', 'testcmd'], (message) => {
+     message.channel.send('Pong!')
+// I am keeping this because it's funny ;p
+});
+command(client, [''], (message) => {
+     message.channel.send('tt what now? Try tt!help silly.')
+});

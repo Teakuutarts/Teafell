@@ -1,4 +1,5 @@
-const TTHelpEmbed = require('./initial_handler.js')
+const TTHelpEmbed = require('./commands/initial_handler.js')
+const command = require('./commands/initial_handler.js')
 
 // MAAAMAAAAAAAAAAAAA!!! OOHOOOHHHH!!!!
 // III DONNT WANNNA DIEE!!!

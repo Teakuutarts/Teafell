@@ -4,5 +4,6 @@
      "token": "OAuthTeXt123.authcode12345",
      "status": "Uwa, So Temperate!",
      "username": "TeakuuCup!"
-     "error": "Sorry, I had an issue processing that request!"
+     "error": "Sorry, I had an issue processing that request!",
+     "clientId": "892265386769272892"
 }

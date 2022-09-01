@@ -16,12 +16,7 @@
 //Sorry for the long message board!!! I just like to have this lol
 const { Client, Intents, Collection, Permissions, Discord, Attachment, Message, MessageEmbed, MessageManager } = require("discord.js");
 const { token } = require("./config.json");
-const command = require('./command.js');
-const command = require('./tt!/initial_handler.js')
-// please :)
-const firstMessage = require('./first-message.js');
-const privateMessage = require('./private-message.js');
-// remove this an the cmds in here for it and move it to ./commands/cooljsfile.js
+const command = require('./deploy-command.js');
 const fs = require('fs');
 const mongoose = require('mongoose');
 const client = new Client({
@@ -31,16 +26,6 @@ const client = new Client({
 client.login(token)
 // If you are made to, put this at the end, idk discordjs is weird :/
 
-command(client, 'mypfp', (message) => {
-		const { MessageEmbed } = require('discord.js');
-		const pfpEmbed = new MessageEmbed()
-			.setColor('#8a4242')
-			.setTitle('Your Profile Picture')
-			.setImage(message.author.avatarURL())
-			.setTimestamp()
-			.setFooter('TF');
-		message.channel.send({ embeds: [pfpEmbed] });
-});
 client.on('messageCreate', msg => {
 	if(msg.content == 'changelog_fsanfiuabfi8h4gsghy5gwehertj4hfe9rgh483tjgwg'){
 		const { MessageEmbed } = require('discord.js');
