@@ -15,16 +15,27 @@
 //
 //Sorry for the long message board!!! I just like to have this lol
 const { Client, Intents, Collection, Permissions, Discord, Attachment, Message, MessageEmbed, MessageManager } = require("discord.js");
-const { token } = require("./config.json");
-const command = require('./deploy-command.js');
-const fs = require('fs');
-const mongoose = require('mongoose');
 const client = new Client({
 	intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MESSAGE_REACTIONS, Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_PRESENCES, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_VOICE_STATES,],
 	partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
 });
+const { token } = require("./config.json");
 client.login(token)
 // If you are made to, put this at the end, idk discordjs is weird :/
+
+const commands = require('./deploy-commands.js');
+const command = require('./commands/command.js');
+const fs = require('fs');
+const mongoose = require('mongoose');
+const status = require('./events/status.js')
+client.once('ready', () => {
+	console.log('Teafell - Loaded Assets & Bot Configuration');
+	console.log('Loading...');
+	console.log('Teafell - ✶ A-K1 - Online ✶');
+});
+
+
+
 
 client.on('messageCreate', msg => {
 	if(msg.content == 'changelog_fsanfiuabfi8h4gsghy5gwehertj4hfe9rgh483tjgwg'){
@@ -109,12 +120,6 @@ command(client, ['bulkclear', 'massclear', 'mclear', 'bclear'], (message) => {
 		client.on("error", () => { client.login(token) });
      	})
 	}
-});
-
-client.once('ready', () => {
-	console.log('Teafell - Loaded Assets & Bot Configuration');
-	console.log('Loading...');
-	console.log('Teafell - ✶ A-K1 - Online ✶');
 });
 
 command(client, 'serverinfo', (message) => {

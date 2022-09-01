@@ -1,4 +1,4 @@
-const { prefix } = require('./config.json')
+const { prefix } = require('../config.json')
 
 // do I add const for alias??? heh??? or prefix!, pfx!, in conf???
 
