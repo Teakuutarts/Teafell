@@ -20,14 +20,14 @@ const client = new Client({
 	partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
 });
 const { token } = require("./config.json");
-client.login(token)
+client.login(token);
 // If you are made to, put this at the end, idk discordjs is weird :/
 
 const commands = require('./deploy-commands.js');
 const command = require('./commands/command.js');
 const fs = require('fs');
 const mongoose = require('mongoose');
-const status = require('./events/status.js')
+const status = require('./events/status.js');
 client.once('ready', () => {
 	console.log('Teafell - Loaded Assets & Bot Configuration');
 	console.log('Loading...');
