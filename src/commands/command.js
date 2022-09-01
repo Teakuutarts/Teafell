@@ -16,4 +16,3 @@ module.exports = (client, aliases, callback) => {
     })
   })
 }
-// how make alias in config
