@@ -26,7 +26,6 @@
     "dotenv": "^10.0.0",
     "libsodium-wrappers": "^0.7.9",
     "mongoose": "^6.0.14",
-    "nodemon": "^2.0.15",
     "reconlx": "^2.4.6",
     "yt-search": "^2.10.2",
     "ytdl-core": "^4.9.1",
