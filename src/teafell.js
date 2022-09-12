@@ -25,15 +25,42 @@ client.once('ready', () => {
 console.log('Teafell - ✶ A-K1 - Online ✶');
 });
 // If you are made to, put this at the end, idk discordjs is weird :/
-
-const command = require('./commands/command.js');
-const commands = require('./deploy-commands.js');
-const fs = require('fs');
-const mongoose = require('mongoose');
-const status = require('./events/status.js');
 client.once('ready', () => {
 	console.log('Loading...');
+});
+
+client.once('ready', () => {console.log('Setting Up Commands.');});
+const command = require('./commands/command.js');
+client.once('ready', () => {console.log('Setting Up Commands..');});
+const commands = require('./deploy-commands.js');
+client.once('ready', () => {console.log('Setting Up Commands...');});
+const teafell = require("./commands/tt!")
+client.once('ready', () => {console.log('Done!');});
+
+
+
+client.once('ready', () => {console.log('Setting Profile');});
+const status = require('./events/status.js');
+catch (error) {
+	console.error(error);}
+
+
+
+client.once('ready', () => {console.log('Loading Content & Assets');});
+const fs = require('fs');
+const mongoose = require('mongoose');
+
+
+
+client.once('ready', () => {console.log('Finalizing...');});
+
+
+
+client.on("error", () => { client.login(token) });
+client.once('ready', () => {
 	console.log('Teafell - Loaded Assets & Bot Configuration');
+	console.log('...')
+	console.log('Done! - *Happy Robot Noises!*')
 });
 
 // :3

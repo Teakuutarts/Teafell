@@ -13,7 +13,7 @@ for (const file of commandFiles) {
 const rest = new REST({ version: '9' }).setToken(token);
 (async () => {
 	try {
-		console.log('Started Application (/) Async Commands.');
+		console.log('Started Application Commands!');
 		await rest.put(
 			Routes.applicationCommands(clientId),
 			{ body: commands },

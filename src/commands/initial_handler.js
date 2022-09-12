@@ -12,12 +12,12 @@ for (const file of commandFiles) {
 const rest = new REST({ version: '9' }).setToken(process.env.TOKEN);
 (async () => {
 	try {
-		console.log('Started refreshing application (/) commands.');
+		console.log('tt! enabled :D');
 		await rest.put(
 			Routes.applicationCommands(clientId),
 			{ body: commands },
 		);
-		console.log('Successfully reloaded application (/) commands.');}
+		console.log('Tested Commands: Working!');}
 	catch (error) {
 		console.error(error);}
 })();
