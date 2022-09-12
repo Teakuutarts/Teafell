@@ -12,7 +12,7 @@ for (const file of commandFiles) {
 const rest = new REST({ version: '9' }).setToken(process.env.TOKEN);
 (async () => {
 	try {
-		console.log('tt! enabled :D');
+		console.log('Teakuu Commands Enabled');
 		await rest.put(
 			Routes.applicationCommands(clientId),
 			{ body: commands },
