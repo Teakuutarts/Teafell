@@ -34,16 +34,16 @@ const command = require('./commands/command.js');
 client.once('ready', () => {console.log('Setting Up Commands..');});
 const commands = require('./deploy-commands.js');
 client.once('ready', () => {console.log('Setting Up Commands...');});
-const teafell = require("./commands/tt!")
+const teafell = require("./commands/tt!/check.js")
 client.once('ready', () => {console.log('Done!');});
 
 
-
-client.once('ready', () => {console.log('Setting Profile');});
+/// - Del can you figure out how to call this module for the status? It won't fucking load it
+client.once('ready', () => {console.log('Setting Profile');
 const status = require('./events/status.js');
-catch (error) {
-	console.error(error);}
-
+require('./events/status.js').status;
+});
+///
 
 
 client.once('ready', () => {console.log('Loading Content & Assets');});
