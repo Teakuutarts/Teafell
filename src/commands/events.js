@@ -1,3 +1,4 @@
+// @Del make this work. Event calling is fkn bs
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 require('dotenv').config();
