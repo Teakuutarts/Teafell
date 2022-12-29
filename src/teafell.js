@@ -3,7 +3,7 @@
 //
 // hi
 // hey, please update any node modules needed, ty!
-//                Need this? sql.teakuu.tk - TartsAdmin
+//                Need this? sql.teakuu.tk - If don't have a login, ask me for one - Ace
 //
 //
 // ich bin ein kätze und ich mag es sooo!!!
